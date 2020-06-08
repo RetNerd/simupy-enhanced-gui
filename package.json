@@ -1,6 +1,8 @@
 {
   "name": "simupy-enhanced-gui",
   "version": "0.1.0",
+  "main": "public/Main.js",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -19,21 +21,27 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "preelectron-pack": "npm build",
+    "electron-pack": "electron-builder --win -c.extraMetadata.main=build/Main.js"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+  "devDependencies": {
+    "electron": "^9.0.3",
+    "electron-builder": "^22.7.0"
+  },
+
+  "build": {
+    "appId": "nonExistentID",
+    "files": [
+    "build/**/*",
+    "node_modules/**/*"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "directories":{
+    "buildResources": "assets"
+    }
   }
 }
