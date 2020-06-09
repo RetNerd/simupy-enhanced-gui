@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-start": "electron .",
-    "preelectron-pack": "npm run build",
+    "preelectron-pack": "tsc public/Main.ts && npm run build",
     "electron-pack": "electron-builder -c.extraMetadata.main=build/Main.js"
   },
   "type": "module",
