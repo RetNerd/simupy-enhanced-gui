@@ -23,9 +23,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-start": "electron .",
-    "preelectron-pack": "npm build",
-    "electron-pack": "electron-builder --win -c.extraMetadata.main=build/Main.js"
+    "preelectron-pack": "npm run build",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/Main.js"
   },
+  "type": "module",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -33,15 +34,26 @@
     "electron": "^9.0.3",
     "electron-builder": "^22.7.0"
   },
-
   "build": {
     "appId": "nonExistentID",
     "files": [
-    "build/**/*",
-    "node_modules/**/*"
+      "build/**/*",
+      "node_modules/**/*"
     ],
-    "directories":{
-    "buildResources": "assets"
+    "directories": {
+      "buildResources": "assets"
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
