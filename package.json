@@ -31,7 +31,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "electron": "^9.0.3",
+    "electron": "^9.3.1",
     "electron-builder": "^22.7.0"
   },
   "build": {
